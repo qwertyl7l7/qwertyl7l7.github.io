@@ -1,9 +1,3 @@
-Project
+Hi! My name is Alan. This is my projects and whatsoever link!
 
-Final Year Project
-
-Arduino
-
-Machine Learning
-
-AI Model
+https://qwertyl7l7.github.io/
