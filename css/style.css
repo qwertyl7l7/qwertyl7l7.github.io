@@ -1,0 +1,132 @@
+/* General styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d1117;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    overflow: hidden;
+}
+
+/* Keep pixels sharp */
+img.pixelated, canvas {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* UI Layer Overlay */
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Let clicks pass through to canvas */
+    z-index: 10;
+}
+
+/* HUD Items */
+#hud {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    pointer-events: auto; /* Buttons need to be clickable */
+}
+
+/* Character Info HUD */
+#char-info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    pointer-events: auto;
+    background-color: rgba(13, 17, 23, 0.9);
+    padding: 10px;
+}
+
+#char-info p {
+    margin: 5px 0;
+    font-size: 12px;
+    color: #39ff14;
+}
+
+/* Custom Neon Green button styling */
+.btn-neon {
+    color: #0d1117 !important;
+    background-color: #39ff14 !important;
+    border-image-slice: 2;
+    border-image-width: 2;
+    border-image-repeat: stretch;
+    border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(57,255,20)" /></svg>');
+    border-image-outset: 2;
+}
+.btn-neon:hover {
+    background-color: #32e612 !important;
+}
+
+/* Dialog Box */
+#dialog-container {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    display: none;
+    pointer-events: auto;
+    background-color: #0d1117;
+    color: #39ff14;
+}
+
+/* Skill Overlay */
+#skill-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    pointer-events: none;
+    text-align: center;
+    background-color: rgba(13, 17, 23, 0.9);
+}
+
+/* Game Container */
+#game-container {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Static Resume */
+#static-resume {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #0d1117;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #39ff14;
+}
+
+.static-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+/* Mobile Handling */
+@media screen and (max-width: 767px) {
+    body {
+        overflow: auto;
+    }
+    #game-container, #ui-layer {
+        display: none !important;
+    }
+    #static-resume {
+        display: block !important;
+    }
+}
